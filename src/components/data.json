@@ -1,0 +1,65 @@
+{
+    "response_code": 0,
+    "results": [
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "Science: Computers",
+        "question": "The computer OEM manufacturer Clevo, known for its Sager notebook line, is based in which country?",
+        "correct_answer": "Taiwan",
+        "incorrect_answers": [
+          "United States",
+          "Germany",
+          "China (People&#039;s Republic of)"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "hard",
+        "category": "Entertainment: Comics",
+        "question": "What year was the first San Diego Comic-Con?",
+        "correct_answer": "1970",
+        "incorrect_answers": [
+          "2000",
+          "1990",
+          "1985"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Entertainment: Comics",
+        "question": "The main six year old protagonist in Calvin and Hobbes is named after what theologian?",
+        "correct_answer": "John Calvin",
+        "incorrect_answers": [
+          "Calvin Klein",
+          "Calvin Coolidge",
+          "Phillip Calvin McGraw"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "easy",
+        "category": "Science: Mathematics",
+        "question": "The metric prefix &quot;atto-&quot; makes a measurement how much smaller than the base unit?",
+        "correct_answer": "One Quintillionth",
+        "incorrect_answers": [
+          "One Billionth",
+          "One Quadrillionth",
+          "One Septillionth"
+        ]
+      },
+      {
+        "type": "multiple",
+        "difficulty": "medium",
+        "category": "General Knowledge",
+        "question": "Scotch whisky and Drambuie make up which cocktail?",
+        "correct_answer": "Rusty Nail",
+        "incorrect_answers": [
+          "Screwdriver",
+          "Sex on the Beach",
+          "Manhattan"
+        ]
+      }
+    ]
+  }

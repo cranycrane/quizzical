@@ -1,38 +1,123 @@
-.App {
-  text-align: center;
+main {
+  font-family: 'Karla', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: center; /* Centruje obsah uvnitř kontejneru vertikálně */
+  align-items: center; /* Centruje obsah uvnitř kontejneru horizontálně */
+  background-color: #F5F7FB;
+  color: #293264;
+  margin: 50px;
+  border-radius: 40px;
+  padding: 10px 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.question-container {
+  margin: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.question {
+  font-size: 16px;
+  font-weight: bold;
 }
+
+.answers input[type="radio"]{
+  display: none;
+}
+
+.answers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+
+.answer {
+  margin-right: 20px;
+  background-color: white;
+  border: 2px solid #293264;
+  border-radius: 12px;
+  color: #2C366E;
+  font-weight: bolder;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.answer:hover {
+  background-color: #f0f0f0;
+}
+
+.answer label {
+  display: block;
+  width: 100%;
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.answer:has(input:checked) {
+  color: #293264;
+  background-color: #D6DBF5;
+  border: 2px solid #D6DBF5;
+}
+
+
+
+.title {
+  font-size: 32px;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.button {
+  margin-top: 30px;
+  width: 200px;
+  height: 60px;
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  font-size: 16pt;
+  border: none;
+  border-radius: 15px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Zarovná všechny dětské prvky k levé straně */
+  padding: 0 10%;
+}
+
+.results {
+  display: flex;
+  justify-content: center;  /* Zarovná obsah na střed */
+  align-items: center;      /* Udrží položky ve vertikálním středu */
+  gap: 20px;                /* Přidává mezery mezi položkami */
+  margin: auto;
+}
+
+.score {
+  line-height: 35px;  /* Nastavte line-height odpovídající výšce tlačítka */
+  padding: 0 16px;
+  font-size: 16px;
+  margin: 0;
+}
+
+
+.submit-button {
+    height: 35px;  /* Ujistěte se, že výška tlačítka odpovídá line-height textu */
+    padding: 0 20px;
+    font-size: 11pt;
+    border: none;
+    border-radius: 15px;
+    background-color: #4D5B9E;
+    color: #F5F7FB;
+    cursor: pointer;
+    align-self: center;
+}
+
