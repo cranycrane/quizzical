@@ -1,7 +1,5 @@
 import React from "react"
 import Question from "./Question"
-import data from './data.json';
-
 
 
 export default function Quiz(props) {
@@ -22,17 +20,20 @@ export default function Quiz(props) {
         loadQuestions();
     }
     
-    function loadQuestions() {
+    const he = require('he');
+    async function loadQuestions() {
         try {
-            //const res = await fetch("https://opentdb.com/api.php?amount=5&type=multiple")
-            //const data = await res.json()
-            // Toto je místo, kde byste načítali data z API nebo jiného zdroje
+            const res = await fetch("https://opentdb.com/api.php?amount=5&type=multiple");
+            const data = await res.json();
             if (data.results) {
                 const shuffledQuestions = data.results.map((question, index) => ({
                     id: index + 1,
-                    question: question.question,
-                    correctAnswer: question.correct_answer,
-                    answers: shuffleArray([question.correct_answer, ...question.incorrect_answers])
+                    question: he.decode(question.question),  // Dekódování HTML entit v otázce
+                    correctAnswer: he.decode(question.correct_answer),  // Dekódování HTML entit ve správné odpovědi
+                    answers: shuffleArray([
+                        he.decode(question.correct_answer),  // Dekódování správné odpovědi
+                        ...question.incorrect_answers.map(answer => he.decode(answer))  // Dekódování špatných odpovědí
+                    ])
                 }));
                 setQuestions(shuffledQuestions);
             } else {
@@ -76,12 +77,21 @@ export default function Quiz(props) {
 
 
     const questionElements = questions && questions.map(question => {
+        const isAnswered = showResults
+        const userAnswer = userAnswers[question.id];
+        const isCorrect = userAnswers[question.id] == question.correctAnswer
+
         return <Question 
-                    question={question.question} 
-                    key={question.id} 
-                    id={question.id} 
-                    answers={question.answers} 
-                    onAnswerChange={handleAnswerChange}/>
+            question={question.question} 
+            key={question.id} 
+            id={question.id} 
+            answers={question.answers} 
+            onAnswerChange={handleAnswerChange}
+            correctAnswer={question.correctAnswer}
+            userAnswer={userAnswer}
+            isAnswered={isAnswered}
+            isCorrect={isCorrect}
+        />;
     })
     
     return (

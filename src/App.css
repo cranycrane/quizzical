@@ -37,7 +37,8 @@ main {
 
 
 .answer {
-  margin-right: 20px;
+  margin: 10px 10px;
+
   background-color: white;
   border: 2px solid #293264;
   border-radius: 12px;
@@ -46,6 +47,7 @@ main {
   font-size: 11px;
   cursor: pointer;
 }
+
 
 .answer:hover {
   background-color: #f0f0f0;
@@ -64,6 +66,13 @@ main {
   border: 2px solid #D6DBF5;
 }
 
+.answer.answer.correct {
+  background-color: #C8E6C9 !important;
+}
+
+.answer.answer.incorrect {
+  background-color: #FFCDD2 !important;
+}
 
 
 .title {
@@ -90,7 +99,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Zarovná všechny dětské prvky k levé straně */
-  padding: 0 10%;
+  padding: 0 5%;
 }
 
 .results {
@@ -106,6 +115,7 @@ form {
   padding: 0 16px;
   font-size: 16px;
   margin: 0;
+  font-weight: bold;
 }
 
 
