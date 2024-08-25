@@ -1,6 +1,4 @@
 import React from "react"
-import Answer from "./Answer"
-
 
 export default function Question(props){
     const { question, answers, id, onAnswerChange, correctAnswer, userAnswer, isAnswered } = props;
